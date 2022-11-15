@@ -22,7 +22,7 @@ h1 {
   color: white;
 }
 p {
-  color: aqua;
+  color: white;
   font-size: 18px;
   line-height: 1.5rem;
 }
@@ -48,10 +48,13 @@ p {
   align-items: center;
   justify-content: space-between;
 }
+.container .headline-info a {
+  text-decoration: none;
+}
 .container ol {
   color: skyblue;
   font-size: 18px;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 .container .task-info {
   display: flex;
