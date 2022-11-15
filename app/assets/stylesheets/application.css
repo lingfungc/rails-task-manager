@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.25rem;
+}
+h1 {
+  color: white;
+}
+p {
+  color: aqua;
+  font-size: 18px;
+  line-height: 1.5rem;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.container .headline {
+  margin: 40px 0px;
+  /* border-bottom: 2px solid navy; */
+  background-color: skyblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .headline-info {
+  width: 95%;
+  margin: 0 auto;
+  padding: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container ol {
+  color: skyblue;
+  font-size: 18px;
+  line-height: 1.5rem;
+}
+.container .task-info {
+  display: flex;
+  align-items: center;
+}
+.container .check-icon {
+  margin: 0px 15px;
+}

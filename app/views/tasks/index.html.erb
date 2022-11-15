@@ -1,15 +1,36 @@
-<h1>Task Manager</h1>
+<div class="container">
 
-<%# check_box_tag %>
+  <div class="headline">
+    <div class="headline-info">
+      <h1>Task Manager</h1>
+      <%= link_to tasks_new_path do %>
+        <p><i class="fa-regular fa-file"></i> Add a new task</p>
+      <% end %>
+    </div>
+  </div>
 
-<ul>
-  <% @tasks.each do |t| %>
-    <% if t.completed %>
-      <li> <input type = "checkbox" checked> <%= link_to t.title, task_path(t.id) %></li>
-    <% else %>
-      <li> <input type = "checkbox"> <%= link_to t.title, task_path(t.id) %></li>
+  <ol>
+    <% @tasks.each do |t| %>
+      <% if t.completed %>
+        <li>
+          <div class="task-info">
+            <div class="check-icon">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+              <%= link_to t.title, task_path(t) %>
+          </div>
+        </li>
+      <% else %>
+        <li>
+          <div class="task-info">
+            <div class="check-icon">
+              <i class="fa-regular fa-circle"></i>
+            </div>
+              <%= link_to t.title, task_path(t) %>
+          </div>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ol>
 
-<%= link_to "Add a new task", tasks_new_path %>
+</div>
