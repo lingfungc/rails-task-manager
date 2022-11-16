@@ -1,12 +1,31 @@
-<h1><%= @task.title %></h1>
-<h4><%= @task.details %></h4>
-<p><%= @result %></p>
+<div class="container">
 
-<%= link_to "Edit task", task_edit_path(@task.id) %>
+  <div class="task-headline">
+    <% if @task.completed %>
+      <h1><i class="fa-solid fa-circle-check check-status"></i><%= @task.title %></h1>
+    <% else %>
+      <h1><i class="fa-regular fa-circle check-status"></i><%= @task.title %></h1>
+    <% end %>
+  </div>
 
-<%= link_to "Delete",
-  task_path(@task),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  <h2>Task details</h2>
+  <div class="task-content">
+    <h3><%= @task.details %></h3>
+  </div>
 
-<%= link_to "Back to list", tasks_path %>
+  <p>Mark task as completed</p>
+  <%= form_with model: @task do |f| %>
+    <%= f.check_box :completed %>
+    <%= f.submit %>
+  <% end %>
+
+  <%= link_to "Edit task", task_edit_path(@task) %>
+
+  <%= link_to "Delete",
+    task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+
+  <%= link_to "Back to list", tasks_path %>
+
+</div>
